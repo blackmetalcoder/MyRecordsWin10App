@@ -1,0 +1,55 @@
+﻿<UserControl
+    x:Class="CDMOLNET_Final.View.Meny"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CDMOLNET_Final.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Cimbalino.Toolkit.Controls"
+    mc:Ignorable="d"
+    d:DesignWidth="300" Width="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <controls:HamburgerMenuButton Content="Hem" NavigationSourcePageType="local:MainPage">
+                <controls:HamburgerMenuButton.Icon>
+                    <FontIcon FontSize="16" Glyph="&#xE80F;" />
+                </controls:HamburgerMenuButton.Icon>
+            </controls:HamburgerMenuButton>
+
+            <controls:HamburgerMenuButton Content="Mina plattor" NavigationSourcePageType="local:MinaPlattor">
+                <controls:HamburgerMenuButton.Icon>
+                    <FontIcon FontSize="16" Glyph="&#xE995;" />
+                </controls:HamburgerMenuButton.Icon>
+            </controls:HamburgerMenuButton>
+            <controls:HamburgerMenuButton Content="Nya plattor" NavigationSourcePageType="local:NyPlatta">
+                <controls:HamburgerMenuButton.Icon>
+                    <FontIcon FontSize="16" Glyph="&#xE1C2;" />
+                </controls:HamburgerMenuButton.Icon>
+            </controls:HamburgerMenuButton>
+            <controls:HamburgerMenuButton Content="Statistik" NavigationSourcePageType="local:Statistik">
+                <controls:HamburgerMenuButton.Icon>
+                    <FontIcon FontSize="16" Glyph="&#xE907;" />
+                </controls:HamburgerMenuButton.Icon>
+            </controls:HamburgerMenuButton>
+            <controls:HamburgerMenuButton Content="Om !" NavigationSourcePageType="local:Om">
+                <controls:HamburgerMenuButton.Icon>
+                    <FontIcon FontSize="16" Glyph="&#xE11B;" />
+                </controls:HamburgerMenuButton.Icon>
+            </controls:HamburgerMenuButton>
+        </StackPanel>
+
+        <controls:HamburgerMenuButton Grid.Row="1"
+                                      Content="Settings"
+                                      NavigationSourcePageType="local:SettingsPage">
+            <controls:HamburgerMenuButton.Icon>
+                <FontIcon FontSize="16" Glyph="&#xE713;" />
+            </controls:HamburgerMenuButton.Icon>
+        </controls:HamburgerMenuButton>
+    </Grid>
+</UserControl>

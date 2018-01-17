@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="finnsUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userNamn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="finnsUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="finnsUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fnamn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enamn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="epost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usernamn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loggaIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usernamn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loggaInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loggaInResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtist10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtist10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtist10Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbum10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbum10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlbum10Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtistResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="senasteInnlagda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="senasteInnlagdaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="senasteInnlagdaResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="minStat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="minStatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="minStatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AntalperAr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AntalperArResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AntalperArResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="media">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mediaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mediaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlbumResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTracks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiscID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTracksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTracksResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="artistInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="artistInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artistInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="topAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="topAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="topAlbumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="artistLiknande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="artistLiknandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artistLiknandeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTracksByArtist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTracksByArtistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTracksByArtistResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArtistInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArtistInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArtistInfoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LiknandeArtister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LiknandeArtisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LiknandeArtisterResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShortAristInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShortAristInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShortAristInfoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArtistAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArtistAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtistAlbumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumTracks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artist" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Album" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumTracksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlbumTracksResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="finnsUserSoapIn">
+    <wsdl:part name="parameters" element="tns:finnsUser" />
+  </wsdl:message>
+  <wsdl:message name="finnsUserSoapOut">
+    <wsdl:part name="parameters" element="tns:finnsUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="addUserSoapIn">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="addUserSoapOut">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="loggaInSoapIn">
+    <wsdl:part name="parameters" element="tns:loggaIn" />
+  </wsdl:message>
+  <wsdl:message name="loggaInSoapOut">
+    <wsdl:part name="parameters" element="tns:loggaInResponse" />
+  </wsdl:message>
+  <wsdl:message name="getArtist10SoapIn">
+    <wsdl:part name="parameters" element="tns:getArtist10" />
+  </wsdl:message>
+  <wsdl:message name="getArtist10SoapOut">
+    <wsdl:part name="parameters" element="tns:getArtist10Response" />
+  </wsdl:message>
+  <wsdl:message name="getAlbum10SoapIn">
+    <wsdl:part name="parameters" element="tns:getAlbum10" />
+  </wsdl:message>
+  <wsdl:message name="getAlbum10SoapOut">
+    <wsdl:part name="parameters" element="tns:getAlbum10Response" />
+  </wsdl:message>
+  <wsdl:message name="getArtistSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtist" />
+  </wsdl:message>
+  <wsdl:message name="getArtistSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="senasteInnlagdaSoapIn">
+    <wsdl:part name="parameters" element="tns:senasteInnlagda" />
+  </wsdl:message>
+  <wsdl:message name="senasteInnlagdaSoapOut">
+    <wsdl:part name="parameters" element="tns:senasteInnlagdaResponse" />
+  </wsdl:message>
+  <wsdl:message name="minStatSoapIn">
+    <wsdl:part name="parameters" element="tns:minStat" />
+  </wsdl:message>
+  <wsdl:message name="minStatSoapOut">
+    <wsdl:part name="parameters" element="tns:minStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="AntalperArSoapIn">
+    <wsdl:part name="parameters" element="tns:AntalperAr" />
+  </wsdl:message>
+  <wsdl:message name="AntalperArSoapOut">
+    <wsdl:part name="parameters" element="tns:AntalperArResponse" />
+  </wsdl:message>
+  <wsdl:message name="mediaSoapIn">
+    <wsdl:part name="parameters" element="tns:media" />
+  </wsdl:message>
+  <wsdl:message name="mediaSoapOut">
+    <wsdl:part name="parameters" element="tns:mediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlbum" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTracksSoapIn">
+    <wsdl:part name="parameters" element="tns:getTracks" />
+  </wsdl:message>
+  <wsdl:message name="getTracksSoapOut">
+    <wsdl:part name="parameters" element="tns:getTracksResponse" />
+  </wsdl:message>
+  <wsdl:message name="artistInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:artistInfo" />
+  </wsdl:message>
+  <wsdl:message name="artistInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:artistInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="topAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:topAlbum" />
+  </wsdl:message>
+  <wsdl:message name="topAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:topAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="artistLiknandeSoapIn">
+    <wsdl:part name="parameters" element="tns:artistLiknande" />
+  </wsdl:message>
+  <wsdl:message name="artistLiknandeSoapOut">
+    <wsdl:part name="parameters" element="tns:artistLiknandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTracksByArtistSoapIn">
+    <wsdl:part name="parameters" element="tns:getTracksByArtist" />
+  </wsdl:message>
+  <wsdl:message name="getTracksByArtistSoapOut">
+    <wsdl:part name="parameters" element="tns:getTracksByArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ArtistInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ArtistInfo" />
+  </wsdl:message>
+  <wsdl:message name="ArtistInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ArtistInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LiknandeArtisterSoapIn">
+    <wsdl:part name="parameters" element="tns:LiknandeArtister" />
+  </wsdl:message>
+  <wsdl:message name="LiknandeArtisterSoapOut">
+    <wsdl:part name="parameters" element="tns:LiknandeArtisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShortAristInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ShortAristInfo" />
+  </wsdl:message>
+  <wsdl:message name="ShortAristInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ShortAristInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArtistAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArtistAlbum" />
+  </wsdl:message>
+  <wsdl:message name="GetArtistAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArtistAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumTracksSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumTracks" />
+  </wsdl:message>
+  <wsdl:message name="AlbumTracksSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumTracksResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CDServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="finnsUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kollar om användarnamn är upptaget</wsdl:documentation>
+      <wsdl:input message="tns:finnsUserSoapIn" />
+      <wsdl:output message="tns:finnsUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Skapar ny användare till CDMOLNET</wsdl:documentation>
+      <wsdl:input message="tns:addUserSoapIn" />
+      <wsdl:output message="tns:addUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loggaIn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Loggar in användare</wsdl:documentation>
+      <wsdl:input message="tns:loggaInSoapIn" />
+      <wsdl:output message="tns:loggaInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtist10">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar artister i ordning</wsdl:documentation>
+      <wsdl:input message="tns:getArtist10SoapIn" />
+      <wsdl:output message="tns:getArtist10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlbum10">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar Album per artist/grupp</wsdl:documentation>
+      <wsdl:input message="tns:getAlbum10SoapIn" />
+      <wsdl:output message="tns:getAlbum10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar artister i ordning</wsdl:documentation>
+      <wsdl:input message="tns:getArtistSoapIn" />
+      <wsdl:output message="tns:getArtistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="senasteInnlagda">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar de 50 senaste innlagda</wsdl:documentation>
+      <wsdl:input message="tns:senasteInnlagdaSoapIn" />
+      <wsdl:output message="tns:senasteInnlagdaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="minStat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Användar statistik</wsdl:documentation>
+      <wsdl:input message="tns:minStatSoapIn" />
+      <wsdl:output message="tns:minStatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AntalperAr">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Antal cd per år för graph</wsdl:documentation>
+      <wsdl:input message="tns:AntalperArSoapIn" />
+      <wsdl:output message="tns:AntalperArSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="media">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Antal per media till PIE-graph</wsdl:documentation>
+      <wsdl:input message="tns:mediaSoapIn" />
+      <wsdl:output message="tns:mediaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlbum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar Album per artist/grupp</wsdl:documentation>
+      <wsdl:input message="tns:getAlbumSoapIn" />
+      <wsdl:output message="tns:getAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTracks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar Tracks för valt album</wsdl:documentation>
+      <wsdl:input message="tns:getTracksSoapIn" />
+      <wsdl:output message="tns:getTracksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="artistInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar artist/grupp info</wsdl:documentation>
+      <wsdl:input message="tns:artistInfoSoapIn" />
+      <wsdl:output message="tns:artistInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="topAlbum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar top album för vald grupp/artist</wsdl:documentation>
+      <wsdl:input message="tns:topAlbumSoapIn" />
+      <wsdl:output message="tns:topAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="artistLiknande">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämta liknande artister/grupper</wsdl:documentation>
+      <wsdl:input message="tns:artistLiknandeSoapIn" />
+      <wsdl:output message="tns:artistLiknandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTracksByArtist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar Tracks för vald artist</wsdl:documentation>
+      <wsdl:input message="tns:getTracksByArtistSoapIn" />
+      <wsdl:output message="tns:getTracksByArtistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ArtistInfo">
+      <wsdl:input message="tns:ArtistInfoSoapIn" />
+      <wsdl:output message="tns:ArtistInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LiknandeArtister">
+      <wsdl:input message="tns:LiknandeArtisterSoapIn" />
+      <wsdl:output message="tns:LiknandeArtisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShortAristInfo">
+      <wsdl:input message="tns:ShortAristInfoSoapIn" />
+      <wsdl:output message="tns:ShortAristInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar Artist/Album från GraceNote</wsdl:documentation>
+      <wsdl:input message="tns:GetArtistAlbumSoapIn" />
+      <wsdl:output message="tns:GetArtistAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumTracks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hämtar Album från GraceNote</wsdl:documentation>
+      <wsdl:input message="tns:AlbumTracksSoapIn" />
+      <wsdl:output message="tns:AlbumTracksSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CDServiceSoap" type="tns:CDServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnsUser">
+      <soap:operation soapAction="http://tempuri.org/finnsUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="http://tempuri.org/addUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loggaIn">
+      <soap:operation soapAction="http://tempuri.org/loggaIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtist10">
+      <soap:operation soapAction="http://tempuri.org/getArtist10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbum10">
+      <soap:operation soapAction="http://tempuri.org/getAlbum10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtist">
+      <soap:operation soapAction="http://tempuri.org/getArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="senasteInnlagda">
+      <soap:operation soapAction="http://tempuri.org/senasteInnlagda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="minStat">
+      <soap:operation soapAction="http://tempuri.org/minStat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AntalperAr">
+      <soap:operation soapAction="http://tempuri.org/AntalperAr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="media">
+      <soap:operation soapAction="http://tempuri.org/media" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbum">
+      <soap:operation soapAction="http://tempuri.org/getAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTracks">
+      <soap:operation soapAction="http://tempuri.org/getTracks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="artistInfo">
+      <soap:operation soapAction="http://tempuri.org/artistInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="topAlbum">
+      <soap:operation soapAction="http://tempuri.org/topAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="artistLiknande">
+      <soap:operation soapAction="http://tempuri.org/artistLiknande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTracksByArtist">
+      <soap:operation soapAction="http://tempuri.org/getTracksByArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArtistInfo">
+      <soap:operation soapAction="http://tempuri.org/ArtistInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiknandeArtister">
+      <soap:operation soapAction="http://tempuri.org/LiknandeArtister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShortAristInfo">
+      <soap:operation soapAction="http://tempuri.org/ShortAristInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbum">
+      <soap:operation soapAction="http://tempuri.org/GetArtistAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumTracks">
+      <soap:operation soapAction="http://tempuri.org/AlbumTracks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CDServiceSoap12" type="tns:CDServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnsUser">
+      <soap12:operation soapAction="http://tempuri.org/finnsUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap12:operation soapAction="http://tempuri.org/addUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loggaIn">
+      <soap12:operation soapAction="http://tempuri.org/loggaIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtist10">
+      <soap12:operation soapAction="http://tempuri.org/getArtist10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbum10">
+      <soap12:operation soapAction="http://tempuri.org/getAlbum10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtist">
+      <soap12:operation soapAction="http://tempuri.org/getArtist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="senasteInnlagda">
+      <soap12:operation soapAction="http://tempuri.org/senasteInnlagda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="minStat">
+      <soap12:operation soapAction="http://tempuri.org/minStat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AntalperAr">
+      <soap12:operation soapAction="http://tempuri.org/AntalperAr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="media">
+      <soap12:operation soapAction="http://tempuri.org/media" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbum">
+      <soap12:operation soapAction="http://tempuri.org/getAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTracks">
+      <soap12:operation soapAction="http://tempuri.org/getTracks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="artistInfo">
+      <soap12:operation soapAction="http://tempuri.org/artistInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="topAlbum">
+      <soap12:operation soapAction="http://tempuri.org/topAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="artistLiknande">
+      <soap12:operation soapAction="http://tempuri.org/artistLiknande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTracksByArtist">
+      <soap12:operation soapAction="http://tempuri.org/getTracksByArtist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArtistInfo">
+      <soap12:operation soapAction="http://tempuri.org/ArtistInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiknandeArtister">
+      <soap12:operation soapAction="http://tempuri.org/LiknandeArtister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShortAristInfo">
+      <soap12:operation soapAction="http://tempuri.org/ShortAristInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbum">
+      <soap12:operation soapAction="http://tempuri.org/GetArtistAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumTracks">
+      <soap12:operation soapAction="http://tempuri.org/AlbumTracks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CDService">
+    <wsdl:port name="CDServiceSoap" binding="tns:CDServiceSoap">
+      <soap:address location="http://cdmolnet.se/CDService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CDServiceSoap12" binding="tns:CDServiceSoap12">
+      <soap12:address location="http://cdmolnet.se/CDService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
